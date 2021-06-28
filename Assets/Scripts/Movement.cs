@@ -33,12 +33,16 @@ public class Movement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.A))
         {
+            rb.freezeRotation = true;
             transform.Rotate(Vector3.forward * rotationThrust * Time.deltaTime);
+            rb.freezeRotation = false;
         }
 
         else if (Input.GetKey(KeyCode.D))
         {
+            rb.freezeRotation = true;
             transform.Rotate(-Vector3.forward * rotationThrust * Time.deltaTime);
+            rb.freezeRotation = false;
         }
     }
 }
